@@ -19,6 +19,6 @@ steps:
     resourceGroupName: 'eldhosresgroup'
     location: 'Central US'
     templateLocation: 'Linked artifact'
-    csmFile: 'AzureDevOps/azuredeploy.json'
+    csmFile: 'Sample_Application/azuredeploy.json'
     overrideParameters: '--webappName ciwebapp'
     deploymentMode: 'Incremental'

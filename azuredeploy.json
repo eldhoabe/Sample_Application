@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    // "storageName": {
+    //   "type": "string",
+    //   "minLength": 3,
+    //   "maxLength": 24
+    // },
+    // "storageSKU": {
+    //   "type": "string",
+    //   "defaultValue": "Standard_LRS",
+    //   "allowedValues": [
+    //     "Standard_LRS",
+    //     "Standard_GRS",
+    //     "Standard_RAGRS",
+    //     "Standard_ZRS",
+    //     "Premium_LRS",
+    //     "Premium_ZRS",
+    //     "Standard_GZRS",
+    //     "Standard_RAGZRS"
+    //   ]
+    // },
+    "location": {
+      "type": "string",
+      "defaultValue": "centralus"
+
+    },
+    "webAppName": {
+     "type": "string",
+     "metadata": {
+       "description": "Base name of the resource such as web app name and app service plan "
+     },
+     "minLength": 2
+   },
+   "resourceTags": {
+       "type": "object",
+       "defaultValue": {
+           "Environment": "Dev",
+           "Project": "AzureDevOps Tutorial"
+       }
+   }
+
+  },
+  "variables": {
+    "webAppName":"[concat(parameters('webAppName'),uniqueString(resourceGroup().name))]",
+    "appServicePlanName":"ASP-FreeTrailRG-bb50 (S1: 1)"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2018-11-01",
+      "name": "[variables('webAppName')]",
+      "location":"[parameters('location')]",
+      "kind":"app",
+       "tags": {
+           "tagName": "[parameters('resourceTags').Environment]"
+       },
+      "properties":{
+        "siteConfig":{
+          "netFrameworkVersion":"V4.7"
+
+        }
+      }
+
+
+
+    }
+  
+  ]
+}

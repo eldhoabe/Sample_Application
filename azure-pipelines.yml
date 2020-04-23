@@ -13,7 +13,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'azureRmpipelineConnection'
+    azureResourceManagerConnection: 'AzureRmPipeline-conn'
     subscriptionId: 'e0ea80b3-1689-4095-a11f-4b46d936e200'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'eldhosresgroup'

@@ -57,7 +57,7 @@
        ],
        "properties": {
            "name": "sample_Applicationplan_webapp",
-           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'sample_Applicationplan')]"
        }
    }
   ]

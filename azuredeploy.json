@@ -1,31 +1,8 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {
-    "location": {
-      "type": "string",
-      "defaultValue": "centralus"
-
-    },
-    "webAppName": {
-     "type": "string",
-     "metadata": {
-       "description": "Base name of the resource such as web app name and app service plan "
-     },
-     "minLength": 2
-   },
-   "resourceTags": {
-       "type": "object",
-       "defaultValue": {
-           "Environment": "Dev",
-           "Project": "AzureDevOps Tutorial"
-       }
-   }
-
-  },
-  "variables": {
-  
-  },
+  "parameters": {},
+  "variables": {},
   "resources": [
    {
        "name": "sample_Applicationplan",
@@ -57,7 +34,7 @@
        ],
        "properties": {
            "name": "sample_Applicationplan_webapp",
-           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'sample_Applicationplan')]"
+           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
        }
    }
   ]

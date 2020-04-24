@@ -13,6 +13,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  - 
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -22,6 +23,6 @@ steps:
     resourceGroupName: 'eldhosresgroup'
     location: 'Central US'
     templateLocation: 'Linked artifact'
-    csmFile: 'eldhoabe/Sample_Application/azuredeploy.json'
-    overrideParameters: '--webappName ciwebapp'
+    csmFile: 'Sample_Application/azuredeploy.json'
+    overrideParameters: '-webAppName cicdapp -linkedTemplateUri https://github.com/eldhoabe/Sample_Application/blob/master/azuredeploy.json'
     deploymentMode: 'Incremental'

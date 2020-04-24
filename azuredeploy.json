@@ -21,19 +21,19 @@
        }
    },
    {
-       "name": "sample_Applicationplan_webapp",
+       "name": "mywebapplicaton256",
        "type": "Microsoft.Web/sites",
        "apiVersion": "2018-11-01",
        "location": "[resourceGroup().location]",
        "tags": {
            "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/sample_Applicationplan')]": "Resource",
-           "displayName": "sample_Applicationplan_webapp"
+           "displayName": "mywebapplicaton256"
        },
        "dependsOn": [
            "[resourceId('Microsoft.Web/serverfarms', 'sample_Applicationplan')]"
        ],
        "properties": {
-           "name": "sample_Applicationplan_webapp",
+           "name": "mywebapplicaton256",
            "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'sample_Applicationplan')]"
        }
    }
